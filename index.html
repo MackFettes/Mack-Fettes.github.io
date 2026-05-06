@@ -92,7 +92,7 @@
 
   <section>
     <p class="section-label">About</p>
-    <p class="about-text">Penultimate-year MEng student with real offshore industry experience — not just textbooks. I've worked hands-on with hydraulic workover units at WellGear and supported subsea pipeline design at TechnipFMC. Strong grounding in mechanical, thermodynamic and fluid systems, with current offshore safety certifications. Practical, driven under pressure, and keen to find the right opportunity for summer 2026.</p>
+    <p class="about-text">Final year MEng Mechanical and Energy Engineering student at Heriot-Watt University with hands-on offshore experience through roles at The WellGear Group and TechnipFMC. Strong technical grounding in mechanical, thermodynamic and fluid systems, backed by current offshore safety certifications and a track record of performing well under pressure in operational environments.</p>
   </section>
 
   <section>
@@ -146,9 +146,9 @@
   <section>
     <p class="section-label">Certifications</p>
     <div class="certs">
-      <div class="cert"><div class="cert-dot"></div><span class="cert-text">OPITO BOSIET</span></div>
-      <div class="cert"><div class="cert-dot"></div><span class="cert-text">OPITO MIST</span></div>
-      <div class="cert"><div class="cert-dot"></div><span class="cert-text">OEUK Medical</span></div>
+      <div class="cert" onclick="openModal('bosiet')" style="cursor:pointer;transition:background 0.15s;" onmouseover="this.style.background='#f7f6f2'" onmouseout="this.style.background=''"><div class="cert-dot"></div><span class="cert-text">OPITO BOSIET</span><span style="font-size:11px;color:#aaa99f;margin-left:auto;">↗</span></div>
+      <div class="cert" onclick="openModal('mist')" style="cursor:pointer;transition:background 0.15s;" onmouseover="this.style.background='#f7f6f2'" onmouseout="this.style.background=''"><div class="cert-dot"></div><span class="cert-text">OPITO MIST</span><span style="font-size:11px;color:#aaa99f;margin-left:auto;">↗</span></div>
+      <div class="cert" onclick="openModal('oeuk')" style="cursor:pointer;transition:background 0.15s;" onmouseover="this.style.background='#f7f6f2'" onmouseout="this.style.background=''"><div class="cert-dot"></div><span class="cert-text">OEUK Medical</span><span style="font-size:11px;color:#aaa99f;margin-left:auto;">↗</span></div>
       <div class="cert"><div class="cert-dot"></div><span class="cert-text">B1 Forklift (WellGear)</span></div>
     </div>
   </section>
@@ -388,6 +388,99 @@
   </div>
 </div>
 
+
+<!-- MODAL: BOSIET -->
+<div class="modal-overlay" id="modal-bosiet" onclick="closeOnOverlay(event,'bosiet')">
+  <div class="modal">
+    <div class="modal-header">
+      <div><p class="modal-title">OPITO BOSIET with CA-EBS</p><p class="modal-sub">Basic Offshore Safety Induction and Emergency Training · 3t Training Services, Dyce</p></div>
+      <button class="modal-close" onclick="closeModal('bosiet')">✕</button>
+    </div>
+    <div class="modal-body">
+      <div class="modal-section">
+        <p class="modal-section-label">About this certification</p>
+        <p class="modal-text">BOSIET is the mandatory safety training standard required for anyone working offshore in the UK North Sea. It covers helicopter underwater escape, sea survival, firefighting, first aid and emergency procedures. The CA-EBS (Compressed Air Emergency Breathing System) component adds training on the breathing device used during helicopter ditching scenarios.</p>
+      </div>
+      <div class="modal-section">
+        <p class="modal-section-label">Certificate details</p>
+        <ul class="modal-bullets">
+          <li>Awarded: 28 May 2025</li>
+          <li>Expiry: 27 May 2029</li>
+          <li>Certificate No: OPITOfD5TIH1U4I</li>
+          <li>OPITO Learner No: L02408773</li>
+          <li>Issued by: 3t Training Services Ltd, Dyce, Aberdeen</li>
+        </ul>
+      </div>
+      <div class="modal-tags">
+        <span class="modal-tag">Helicopter underwater escape</span><span class="modal-tag">Sea survival</span><span class="modal-tag">Firefighting</span><span class="modal-tag">Emergency procedures</span><span class="modal-tag">CA-EBS</span>
+      </div>
+      <p class="pdf-label">Certificate</p>
+      <a href="bosiet.pdf" target="_blank" style="display:inline-flex;align-items:center;gap:8px;font-size:13px;color:#1a1a18;text-decoration:none;padding:8px 16px;border:0.5px solid #c8c6be;border-radius:8px;transition:background 0.15s;" onmouseover="this.style.background='#f7f6f2'" onmouseout="this.style.background=''"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14,2 14,8 20,8"/></svg> Open certificate (PDF)</a>
+    </div>
+  </div>
+</div>
+
+<!-- MODAL: MIST -->
+<div class="modal-overlay" id="modal-mist" onclick="closeOnOverlay(event,'mist')">
+  <div class="modal">
+    <div class="modal-header">
+      <div><p class="modal-title">OPITO MIST</p><p class="modal-sub">Minimum Industry Safety Training Standard · 3t Training Services, Dyce</p></div>
+      <button class="modal-close" onclick="closeModal('mist')">✕</button>
+    </div>
+    <div class="modal-body">
+      <div class="modal-section">
+        <p class="modal-section-label">About this certification</p>
+        <p class="modal-text">MIST is the refresher safety training standard for offshore workers, designed to maintain and update the competencies covered in BOSIET. It is required periodically to keep offshore safety certification current and is a prerequisite for accessing offshore installations in the UK.</p>
+      </div>
+      <div class="modal-section">
+        <p class="modal-section-label">Certificate details</p>
+        <ul class="modal-bullets">
+          <li>Awarded: 30 May 2025</li>
+          <li>Expiry: 29 May 2029</li>
+          <li>Certificate No: OPITO8eciRr2vFg</li>
+          <li>OPITO Learner No: L02408773</li>
+          <li>Issued by: 3t Training Services Ltd, Dyce, Aberdeen</li>
+        </ul>
+      </div>
+      <div class="modal-tags">
+        <span class="modal-tag">Offshore safety</span><span class="modal-tag">Emergency procedures</span><span class="modal-tag">OPITO approved</span>
+      </div>
+      <p class="pdf-label">Certificate</p>
+      <a href="mist.pdf" target="_blank" style="display:inline-flex;align-items:center;gap:8px;font-size:13px;color:#1a1a18;text-decoration:none;padding:8px 16px;border:0.5px solid #c8c6be;border-radius:8px;transition:background 0.15s;" onmouseover="this.style.background='#f7f6f2'" onmouseout="this.style.background=''"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14,2 14,8 20,8"/></svg> Open certificate (PDF)</a>
+    </div>
+  </div>
+</div>
+
+<!-- MODAL: OEUK Medical -->
+<div class="modal-overlay" id="modal-oeuk" onclick="closeOnOverlay(event,'oeuk')">
+  <div class="modal">
+    <div class="modal-header">
+      <div><p class="modal-title">OEUK Medical Certificate</p><p class="modal-sub">Offshore Energies UK · 3t Training Services, Dyce</p></div>
+      <button class="modal-close" onclick="closeModal('oeuk')">✕</button>
+    </div>
+    <div class="modal-body">
+      <div class="modal-section">
+        <p class="modal-section-label">About this certification</p>
+        <p class="modal-text">The OEUK Medical is the mandatory fitness-for-offshore examination required for all personnel working on UK offshore installations. It confirms that the individual has been examined by an approved physician and is medically fit for offshore employment.</p>
+      </div>
+      <div class="modal-section">
+        <p class="modal-section-label">Certificate details</p>
+        <ul class="modal-bullets">
+          <li>Date of examination: 27 May 2025</li>
+          <li>Expiry: 27 May 2027</li>
+          <li>Certificate No: 27052501</li>
+          <li>Examining Physician: Dr. Raza Hyder OEUK2010/1591</li>
+          <li>Issued by: 3t Training Services, Dyce, Aberdeen</li>
+        </ul>
+      </div>
+      <div class="modal-tags">
+        <span class="modal-tag">Medically fit offshore</span><span class="modal-tag">OEUK guidelines</span><span class="modal-tag">Valid to May 2027</span>
+      </div>
+      <p class="pdf-label">Certificate</p>
+      <a href="oeuk.pdf" target="_blank" style="display:inline-flex;align-items:center;gap:8px;font-size:13px;color:#1a1a18;text-decoration:none;padding:8px 16px;border:0.5px solid #c8c6be;border-radius:8px;transition:background 0.15s;" onmouseover="this.style.background='#f7f6f2'" onmouseout="this.style.background=''"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14,2 14,8 20,8"/></svg> Open certificate (PDF)</a>
+    </div>
+  </div>
+</div>
 <script>
   function openModal(id) {
     document.getElementById('modal-' + id).classList.add('open');
