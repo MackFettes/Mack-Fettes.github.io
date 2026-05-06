@@ -8,77 +8,202 @@
 <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-  body { font-family: 'DM Sans', sans-serif; background: #f7f6f2; color: #1a1a18; min-height: 100vh; padding: 3rem 1.5rem; }
-  .wrap { max-width: 720px; margin: 0 auto; background: #fff; border: 0.5px solid #dddbd4; border-radius: 16px; overflow: hidden; }
-  .hero { padding: 2.5rem 2.5rem 2rem; border-bottom: 0.5px solid #dddbd4; }
-  .hero-label { font-family: 'DM Mono', monospace; font-size: 11px; letter-spacing: 1.5px; text-transform: uppercase; color: #888780; margin-bottom: 8px; }
-  .hero-name { font-size: 38px; font-weight: 300; letter-spacing: -1px; line-height: 1.1; margin-bottom: 20px; }
-  .hero-tags { display: flex; flex-wrap: wrap; gap: 8px; }
-  .hero-tag { font-size: 12px; padding: 4px 12px; border: 0.5px solid #c8c6be; border-radius: 20px; color: #5f5e5a; }
-  section { padding: 2rem 2.5rem; border-bottom: 0.5px solid #dddbd4; }
+  html { font-size: 16px; }
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: #f7f6f2;
+    color: #1a1a18;
+    min-height: 100vh;
+    padding: 3rem 1.5rem;
+  }
+  .wrap {
+    max-width: 720px;
+    margin: 0 auto;
+    background: #fff;
+    border: 0.5px solid #dddbd4;
+    border-radius: 16px;
+    overflow: hidden;
+  }
+  .hero {
+    padding: 2.5rem 2.5rem 2rem;
+    border-bottom: 0.5px solid #dddbd4;
+  }
+  .hero-label {
+    font-family: 'DM Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: #888780;
+    margin-bottom: 8px;
+  }
+  .hero-name {
+    font-size: 38px;
+    font-weight: 300;
+    letter-spacing: -1px;
+    line-height: 1.1;
+    margin-bottom: 20px;
+  }
+  .hero-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+  .hero-tag {
+    font-size: 12px;
+    padding: 4px 12px;
+    border: 0.5px solid #c8c6be;
+    border-radius: 20px;
+    color: #5f5e5a;
+  }
+  section {
+    padding: 2rem 2.5rem;
+    border-bottom: 0.5px solid #dddbd4;
+  }
   section:last-child { border-bottom: none; }
-  .section-label { font-family: 'DM Mono', monospace; font-size: 11px; letter-spacing: 1.5px; text-transform: uppercase; color: #aaa99f; margin-bottom: 1.25rem; }
-  .about-text { font-size: 15px; line-height: 1.85; color: #444441; }
-  .job { display: grid; grid-template-columns: 1fr auto; gap: 4px 16px; padding: 1rem; margin-bottom: 10px; border: 0.5px solid #dddbd4; border-radius: 12px; cursor: pointer; transition: background 0.15s, border-color 0.15s; }
-  .job:hover { background: #f7f6f2; border-color: #b4b2a9; }
-  .job:last-child { margin-bottom: 0; }
+  .section-label {
+    font-family: 'DM Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: #aaa99f;
+    margin-bottom: 1.25rem;
+  }
+  .about-text {
+    font-size: 15px;
+    line-height: 1.85;
+    color: #444441;
+  }
+  .job {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 4px 16px;
+    padding-bottom: 1.5rem;
+    margin-bottom: 1.5rem;
+    border-bottom: 0.5px solid #eeecea;
+  }
+  .job:last-child { padding-bottom: 0; margin-bottom: 0; border-bottom: none; }
   .job-title { font-size: 15px; font-weight: 500; }
   .job-co { font-size: 13px; color: #888780; margin-top: 3px; }
-  .job-date { font-family: 'DM Mono', monospace; font-size: 11px; color: #aaa99f; text-align: right; white-space: nowrap; padding-top: 2px; }
-  .job-hint { grid-column: 1 / -1; font-size: 11px; color: #aaa99f; margin-top: 6px; }
-  .projects { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 12px; }
-  .card { background: #f7f6f2; border: 0.5px solid #dddbd4; border-radius: 12px; padding: 1.1rem; display: flex; flex-direction: column; cursor: pointer; transition: background 0.15s, border-color 0.15s; }
-  .card:hover { background: #eeecea; border-color: #b4b2a9; }
+  .job-date {
+    font-family: 'DM Mono', monospace;
+    font-size: 11px;
+    color: #aaa99f;
+    text-align: right;
+    white-space: nowrap;
+    padding-top: 2px;
+  }
+  .job-bullets {
+    grid-column: 1 / -1;
+    padding-left: 16px;
+    margin-top: 10px;
+  }
+  .job-bullets li {
+    font-size: 13px;
+    color: #5f5e5a;
+    line-height: 1.75;
+    margin-bottom: 4px;
+  }
+  .projects {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 12px;
+  }
+  .card {
+    background: #f7f6f2;
+    border: 0.5px solid #dddbd4;
+    border-radius: 12px;
+    padding: 1.1rem;
+    display: flex;
+    flex-direction: column;
+  }
   .card-icon { font-size: 18px; margin-bottom: 10px; color: #888780; }
   .card-title { font-size: 13px; font-weight: 500; margin-bottom: 6px; }
   .card-desc { font-size: 12px; color: #5f5e5a; line-height: 1.65; flex: 1; margin-bottom: 12px; }
-  .card-result { font-family: 'DM Mono', monospace; font-size: 11px; color: #0f6e56; border-top: 0.5px solid #dddbd4; padding-top: 10px; }
-  .card-hint { font-size: 11px; color: #aaa99f; margin-top: 6px; }
-  .certs { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 10px; }
-  .cert { background: #fff; border: 0.5px solid #dddbd4; border-radius: 8px; padding: 10px 14px; display: flex; align-items: center; gap: 10px; }
-  .cert-dot { width: 7px; height: 7px; border-radius: 50%; background: #1d9e75; flex-shrink: 0; }
+  .card-result {
+    font-family: 'DM Mono', monospace;
+    font-size: 11px;
+    color: #0f6e56;
+    border-top: 0.5px solid #dddbd4;
+    padding-top: 10px;
+  }
+  .certs {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 10px;
+  }
+  .cert {
+    background: #fff;
+    border: 0.5px solid #dddbd4;
+    border-radius: 8px;
+    padding: 10px 14px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .cert-dot {
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: #1d9e75;
+    flex-shrink: 0;
+  }
   .cert-text { font-size: 12px; font-weight: 500; line-height: 1.4; }
   .skills { display: flex; flex-wrap: wrap; gap: 8px; }
-  .skill { font-size: 12px; padding: 5px 12px; background: #f7f6f2; border-radius: 20px; color: #5f5e5a; border: 0.5px solid #dddbd4; }
+  .skill {
+    font-size: 12px;
+    padding: 5px 12px;
+    background: #f7f6f2;
+    border-radius: 20px;
+    color: #5f5e5a;
+    border: 0.5px solid #dddbd4;
+  }
   .achievements { list-style: none; }
-  .achievements li { font-size: 14px; color: #444441; line-height: 1.7; padding: 8px 0 8px 18px; border-bottom: 0.5px solid #eeecea; position: relative; }
+  .achievements li {
+    font-size: 14px;
+    color: #444441;
+    line-height: 1.7;
+    padding: 6px 0;
+    border-bottom: 0.5px solid #eeecea;
+    padding-left: 16px;
+    position: relative;
+  }
   .achievements li:last-child { border-bottom: none; }
-  .achievements li::before { content: ''; position: absolute; left: 0; top: 16px; width: 6px; height: 6px; border-radius: 50%; background: #1d9e75; }
+  .achievements li::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 14px;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: #1d9e75;
+  }
   .contact { display: flex; gap: 10px; flex-wrap: wrap; }
-  .contact-link { display: flex; align-items: center; gap: 7px; font-size: 13px; color: #444441; text-decoration: none; padding: 7px 14px; border: 0.5px solid #c8c6be; border-radius: 8px; transition: background 0.15s; }
+  .contact-link {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+    font-size: 13px;
+    color: #444441;
+    text-decoration: none;
+    padding: 7px 14px;
+    border: 0.5px solid #c8c6be;
+    border-radius: 8px;
+    transition: background 0.15s;
+  }
   .contact-link:hover { background: #f7f6f2; }
   .contact-link svg { width: 15px; height: 15px; stroke: currentColor; fill: none; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; flex-shrink: 0; }
-  .modal-overlay { display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.45); z-index: 100; align-items: flex-start; justify-content: center; padding: 2rem 1rem; overflow-y: auto; }
-  .modal-overlay.open { display: flex; }
-  .modal { background: #fff; border-radius: 16px; width: 100%; max-width: 780px; margin: auto; overflow: hidden; border: 0.5px solid #dddbd4; }
-  .modal-header { padding: 1.5rem 2rem; border-bottom: 0.5px solid #dddbd4; display: flex; justify-content: space-between; align-items: flex-start; gap: 1rem; }
-  .modal-title { font-size: 20px; font-weight: 500; margin-bottom: 4px; }
-  .modal-sub { font-size: 13px; color: #888780; }
-  .modal-close { background: none; border: 0.5px solid #dddbd4; border-radius: 8px; width: 32px; height: 32px; cursor: pointer; font-size: 16px; color: #888780; display: flex; align-items: center; justify-content: center; flex-shrink: 0; transition: background 0.15s; }
-  .modal-close:hover { background: #f7f6f2; }
-  .modal-body { padding: 1.5rem 2rem; }
-  .modal-section { margin-bottom: 1.5rem; }
-  .modal-section:last-child { margin-bottom: 0; }
-  .modal-section-label { font-family: 'DM Mono', monospace; font-size: 10px; letter-spacing: 1.5px; text-transform: uppercase; color: #aaa99f; margin-bottom: 8px; }
-  .modal-text { font-size: 14px; line-height: 1.8; color: #444441; }
-  .modal-bullets { padding-left: 16px; }
-  .modal-bullets li { font-size: 14px; color: #444441; line-height: 1.75; margin-bottom: 6px; }
-  .modal-tags { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 8px; }
-  .modal-tag { font-size: 11px; padding: 3px 10px; background: #f7f6f2; border-radius: 20px; color: #5f5e5a; border: 0.5px solid #dddbd4; }
-  .pdf-label { font-family: 'DM Mono', monospace; font-size: 10px; letter-spacing: 1.5px; text-transform: uppercase; color: #aaa99f; margin-bottom: 8px; margin-top: 1.5rem; }
-  .pdf-viewer { width: 100%; height: 600px; border: 0.5px solid #dddbd4; border-radius: 8px; margin-top: 8px; }
   @media (max-width: 600px) {
     body { padding: 1rem; }
     .hero, section { padding: 1.5rem; }
     .hero-name { font-size: 28px; }
     .projects { grid-template-columns: 1fr 1fr; }
-    .modal-header, .modal-body { padding: 1.25rem; }
-    .pdf-viewer { height: 380px; }
   }
 </style>
 </head>
 <body>
 <div class="wrap">
+
   <div class="hero">
     <p class="hero-label">MEng Mechanical &amp; Energy Engineering · Heriot-Watt University</p>
     <h1 class="hero-name">Mackenzie Fettes</h1>
@@ -97,48 +222,69 @@
 
   <section>
     <p class="section-label">Experience</p>
-    <div class="job" onclick="openModal('wellgear')">
-      <div><p class="job-title">Undergraduate Technician</p><p class="job-co">The WellGear Group</p></div>
+
+    <div class="job">
+      <div>
+        <p class="job-title">Undergraduate Technician</p>
+        <p class="job-co">The WellGear Group</p>
+      </div>
       <p class="job-date">2021 – 2025</p>
-      <p class="job-hint">↗ Click for full detail</p>
+      <ul class="job-bullets">
+        <li>Maintenance on hydraulic workover (HWO) units and offshore equipment preparation for shipment</li>
+        <li>Pump iron maintenance and pressure testing to operational and safety standards</li>
+        <li>Built deep understanding of mechanical systems, equipment reliability and offshore operations</li>
+        <li>Earned increased responsibility through consistent performance in high-pressure environments</li>
+      </ul>
     </div>
-    <div class="job" onclick="openModal('technip')">
-      <div><p class="job-title">Rigid Pipeline Summer Intern</p><p class="job-co">TechnipFMC</p></div>
+
+    <div class="job">
+      <div>
+        <p class="job-title">Rigid Pipeline Summer Intern</p>
+        <p class="job-co">TechnipFMC</p>
+      </div>
       <p class="job-date">Jul – Aug 2024</p>
-      <p class="job-hint">↗ Click for full detail</p>
+      <ul class="job-bullets">
+        <li>Supported engineering teams on subsea pipeline design reviews and operational analysis</li>
+        <li>Contributed to team tasks requiring communication, project planning and collaborative problem resolution</li>
+        <li>Gained exposure to subsea systems and industry-standard engineering tools</li>
+      </ul>
     </div>
   </section>
 
   <section>
     <p class="section-label">Key projects</p>
     <div class="projects">
-      <div class="card" onclick="openModal('fyp')">
-        <div class="card-icon"><svg viewBox="0 0 24 24" width="20" height="20" stroke="currentColor" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a7 7 0 0 1 7 7c0 4-3 6-5 9H10C8 15 5 13 5 9a7 7 0 0 1 7-7z"/><path d="M10 20h4"/><path d="M10 23h4"/></svg></div>
+      <div class="card">
+        <div class="card-icon">
+          <svg viewBox="0 0 24 24" width="20" height="20" stroke="currentColor" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a7 7 0 0 1 7 7c0 4-3 6-5 9H10C8 15 5 13 5 9a7 7 0 0 1 7-7z"/><path d="M10 20h4"/><path d="M10 23h4"/></svg>
+        </div>
         <p class="card-title">Heat exchanger FYP</p>
-        <p class="card-desc">Experimental study on coil pitch and flow configuration effects on heat transfer in a helically coiled shell-and-coil heat exchanger.</p>
-        <p class="card-result">Thermodynamics · Experimental</p>
-        <p class="card-hint">↗ Click to read + view report</p>
+        <p class="card-desc">Effects of coil pitch and flow configuration on heat transfer in a helically coiled heat exchanger. Final year individual research project.</p>
+        <p class="card-result">Thermodynamics · CFD · Analysis</p>
       </div>
-      <div class="card" onclick="openModal('supersonic')">
-        <div class="card-icon"><svg viewBox="0 0 24 24" width="20" height="20" stroke="currentColor" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 2L11 13"/><path d="M22 2L15 22 11 13 2 9l20-7z"/></svg></div>
-        <p class="card-title">Supersonic engine design</p>
-        <p class="card-desc">Group design of a SCRAM/RAM engine for a supersonic transport aircraft — inlet, diffuser, combustion chamber and CD nozzle.</p>
-        <p class="card-result">Compressible flow · Propulsion</p>
-        <p class="card-hint">↗ Click to read + view report</p>
-      </div>
-      <div class="card" onclick="openModal('nhs')">
-        <div class="card-icon"><svg viewBox="0 0 24 24" width="20" height="20" stroke="currentColor" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9,22 9,12 15,12 15,22"/></svg></div>
-        <p class="card-title">NHS anti-ligature dispenser</p>
-        <p class="card-desc">Commissioned by NHS Scotland. Full design-to-manufacture of a towel dispenser for secure mental health environments.</p>
-        <p class="card-result">FEA · Manufacturing · Cost</p>
-        <p class="card-hint">↗ Click to read + view report</p>
-      </div>
-      <div class="card" onclick="openModal('formula')">
-        <div class="card-icon"><svg viewBox="0 0 24 24" width="20" height="20" stroke="currentColor" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="5" cy="17" r="2"/><circle cx="19" cy="17" r="2"/><path d="M5 17H3v-6l2-5h11l4 5v6h-2"/><path d="M9 17h6"/></svg></div>
+      <div class="card">
+        <div class="card-icon">
+          <svg viewBox="0 0 24 24" width="20" height="20" stroke="currentColor" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="5" cy="17" r="2"/><circle cx="19" cy="17" r="2"/><path d="M5 17H3v-6l2-5h11l4 5v6h-2"/><path d="M9 17h6"/></svg>
+        </div>
         <p class="card-title">Formula Student driveline</p>
-        <p class="card-desc">Two-year driveline team member. Motor-to-wheel design, tolerancing, integration and Silverstone competition.</p>
+        <p class="card-desc">Two-year driveline team member on complete motor-to-wheel design. Component tolerancing, integration and Silverstone competition attendance.</p>
         <p class="card-result">CAD · Design · Manufacture</p>
-        <p class="card-hint">↗ Click to read more</p>
+      </div>
+      <div class="card">
+        <div class="card-icon">
+          <svg viewBox="0 0 24 24" width="20" height="20" stroke="currentColor" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9,22 9,12 15,12 15,22"/></svg>
+        </div>
+        <p class="card-title">NHS anti-ligature dispenser</p>
+        <p class="card-desc">Commissioned by NHS Scotland &amp; InnoScot Health. Group design of a wall-mounted paper towel dispenser for secure mental health environments.</p>
+        <p class="card-result">FEA · Manufacturing cost analysis</p>
+      </div>
+      <div class="card">
+        <div class="card-icon">
+          <svg viewBox="0 0 24 24" width="20" height="20" stroke="currentColor" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+        </div>
+        <p class="card-title">Fluid dynamics</p>
+        <p class="card-desc">Top mark in year group for fluid dynamics group project, 3rd year.</p>
+        <p class="card-result">89% · Top of year group</p>
       </div>
     </div>
   </section>
@@ -156,10 +302,15 @@
   <section>
     <p class="section-label">Technical skills</p>
     <div class="skills">
-      <span class="skill">CAD</span><span class="skill">MATLAB</span><span class="skill">Abaqus FEA</span>
-      <span class="skill">Mechanical system design</span><span class="skill">Thermodynamics</span>
-      <span class="skill">Fluid dynamics</span><span class="skill">Offshore equipment</span>
-      <span class="skill">Pressure testing</span><span class="skill">Technical report writing</span>
+      <span class="skill">CAD</span>
+      <span class="skill">MATLAB</span>
+      <span class="skill">Abaqus FEA</span>
+      <span class="skill">Mechanical system design</span>
+      <span class="skill">Thermodynamics</span>
+      <span class="skill">Fluid dynamics</span>
+      <span class="skill">Offshore equipment</span>
+      <span class="skill">Pressure testing</span>
+      <span class="skill">Technical report writing</span>
     </div>
   </section>
 
@@ -168,246 +319,28 @@
     <ul class="achievements">
       <li>Captained Heriot-Watt Rugby 3rd XV — led team to the club's first cup final win in recent history (2025), and reached consecutive cup final (2026)</li>
       <li>Top mark in year group for Fluid Dynamics group project — 89%, 3rd year</li>
-      <li>Recognised for consistent contribution to The WellGear Group's operational success over 4 years</li>
+      <li>Recognised for consistent contribution to The WellGear Group's operational success</li>
     </ul>
   </section>
 
   <section>
     <p class="section-label">Contact</p>
     <div class="contact">
-      <a class="contact-link" href="mailto:Mackenzie.Fettes@Outlook.com"><svg viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2"/><polyline points="2,4 12,13 22,4"/></svg>Mackenzie.Fettes@Outlook.com</a>
-      <a class="contact-link" href="https://www.linkedin.com/in/m-fettes"><svg viewBox="0 0 24 24"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>linkedin.com/in/m-fettes</a>
-      <a class="contact-link" href="tel:07375046660"><svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.65 3.35 2 2 0 0 1 3.62 1h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L7.91 8.6a16 16 0 0 0 6 6l.96-.96a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>07375 046 660</a>
+      <a class="contact-link" href="mailto:Mackenzie.Fettes@Outlook.com">
+        <svg viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2"/><polyline points="2,4 12,13 22,4"/></svg>
+        Mackenzie.Fettes@Outlook.com
+      </a>
+      <a class="contact-link" href="https://www.linkedin.com/in/m-fettes">
+        <svg viewBox="0 0 24 24"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+        linkedin.com/in/m-fettes
+      </a>
+      <a class="contact-link" href="tel:07375046660">
+        <svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.65 3.35 2 2 0 0 1 3.62 1h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L7.91 8.6a16 16 0 0 0 6 6l.96-.96a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+        07375 046 660
+      </a>
     </div>
   </section>
-</div>
 
-<!-- MODAL: WellGear -->
-<div class="modal-overlay" id="modal-wellgear" onclick="closeOnOverlay(event,'wellgear')">
-  <div class="modal">
-    <div class="modal-header">
-      <div><p class="modal-title">Undergraduate Technician</p><p class="modal-sub">The WellGear Group · 2021 – 2025</p></div>
-      <button class="modal-close" onclick="closeModal('wellgear')">✕</button>
-    </div>
-    <div class="modal-body">
-      <div class="modal-section">
-        <p class="modal-section-label">Overview</p>
-        <p class="modal-text">WellGear is an Aberdeen-based provider of hydraulic workover and well intervention equipment to the offshore oil and gas industry. I worked here across four years alongside my degree, building genuine hands-on mechanical experience in a demanding operational environment.</p>
-      </div>
-      <div class="modal-section">
-        <p class="modal-section-label">What I did day to day</p>
-        <ul class="modal-bullets">
-          <li>Maintained and overhauled hydraulic workover unit (HWO) components — stripping, inspecting, repairing and reassembling hydraulic systems to manufacturer and client specifications</li>
-          <li>Carried out pump iron maintenance including high-pressure manifolds, hammer unions and flowline components used in well intervention operations</li>
-          <li>Prepared equipment packages for offshore shipment — inspecting, pressure testing, tagging and documenting to ensure everything was fit for purpose before it left the yard</li>
-          <li>Operated a B1 forklift for moving heavy equipment around the yard and workshop safely</li>
-          <li>Worked directly alongside experienced field engineers, learning how offshore equipment decisions are made in practice</li>
-        </ul>
-      </div>
-      <div class="modal-section">
-        <p class="modal-section-label">What I took from it</p>
-        <p class="modal-text">Four years of this gave me something a degree alone can't — a real feel for how mechanical systems behave in the field, how equipment failure looks before it happens, and what it means to work to offshore safety standards. I understand the gap between theory and practice, and I know how to operate in a professional engineering environment.</p>
-      </div>
-      <div class="modal-tags">
-        <span class="modal-tag">Hydraulic systems</span><span class="modal-tag">Pressure testing</span><span class="modal-tag">Offshore equipment</span><span class="modal-tag">HWO units</span><span class="modal-tag">Workshop operations</span>
-      </div>
-    </div>
-  </div>
 </div>
-
-<!-- MODAL: TechnipFMC -->
-<div class="modal-overlay" id="modal-technip" onclick="closeOnOverlay(event,'technip')">
-  <div class="modal">
-    <div class="modal-header">
-      <div><p class="modal-title">Rigid Pipeline Summer Intern</p><p class="modal-sub">TechnipFMC · July – August 2024</p></div>
-      <button class="modal-close" onclick="closeModal('technip')">✕</button>
-    </div>
-    <div class="modal-body">
-      <div class="modal-section">
-        <p class="modal-section-label">Overview</p>
-        <p class="modal-text">TechnipFMC is a global leader in subsea, onshore and offshore energy solutions. I joined their rigid pipeline engineering team in Aberdeen for an 8-week summer internship, working on live project deliverables alongside experienced engineers.</p>
-      </div>
-      <div class="modal-section">
-        <p class="modal-section-label">What I did</p>
-        <ul class="modal-bullets">
-          <li>Supported the rigid pipeline team on design review tasks for subsea pipeline systems</li>
-          <li>Assisted with operational analysis work, reviewing pipeline performance data and contributing to engineering assessments</li>
-          <li>Attended project meetings and contributed to team tasks requiring coordination between engineering disciplines</li>
-          <li>Gained hands-on exposure to the engineering tools and documentation standards used in a major subsea contractor</li>
-        </ul>
-      </div>
-      <div class="modal-section">
-        <p class="modal-section-label">What I took from it</p>
-        <p class="modal-text">Working at TechnipFMC showed me how large-scale subsea projects are structured and delivered. It gave me direct exposure to how a world-leading engineering firm operates day to day — the documentation standards, the review processes, the collaboration between disciplines — and confirmed that this is the kind of environment I want to work in.</p>
-      </div>
-      <div class="modal-tags">
-        <span class="modal-tag">Subsea systems</span><span class="modal-tag">Pipeline design</span><span class="modal-tag">Operational analysis</span><span class="modal-tag">Engineering documentation</span>
-      </div>
-    </div>
-  </div>
-</div>
-
-<!-- MODAL: FYP -->
-<div class="modal-overlay" id="modal-fyp" onclick="closeOnOverlay(event,'fyp')">
-  <div class="modal">
-    <div class="modal-header">
-      <div><p class="modal-title">Heat exchanger FYP</p><p class="modal-sub">4th Year Individual Project · B50PR · Heriot-Watt University</p></div>
-      <button class="modal-close" onclick="closeModal('fyp')">✕</button>
-    </div>
-    <div class="modal-body">
-      <div class="modal-section">
-        <p class="modal-section-label">Project summary</p>
-        <p class="modal-text">This project experimentally investigated how coil pitch, flow configuration, water flowrate, air velocity and pulsed airflow affect the overall heat transfer coefficient in a helically coiled shell-and-coil heat exchanger. Three coil pitches (19 mm, 24.5 mm and 30 mm) were tested under parallel and counter-current flow conditions.</p>
-      </div>
-      <div class="modal-section">
-        <p class="modal-section-label">Key findings</p>
-        <ul class="modal-bullets">
-          <li>Counter-current flow outperformed parallel flow by an average of 14.7% under steady conditions</li>
-          <li>Air velocity was the dominant variable — increasing from 10 to 18.5 m/s raised the heat transfer coefficient by ~60%</li>
-          <li>Highest measured overall heat transfer coefficient: 0.245 kW/m²K at 24.5 mm pitch</li>
-          <li>No single coil pitch was universally optimal — each behaved as a distinct heat exchanger depending on operating conditions</li>
-          <li>Pulsed airflow at Strouhal number 0.2 generally reduced performance</li>
-          <li>Theoretical optimisation identified 19 mm pitch as highest predicted U at 0.305 kW/m²K, diverging from experimental peak — highlighting limitations in airside correlations</li>
-        </ul>
-      </div>
-      <div class="modal-section">
-        <p class="modal-section-label">What this project involved</p>
-        <p class="modal-text">A full individual research project — I designed the experimental methodology, built and ran the test rig, collected and processed the data, applied Nusselt number correlations for theoretical comparison, and wrote a 7,700-word journal paper. It sits at the intersection of thermodynamics, fluid mechanics and experimental engineering.</p>
-      </div>
-      <div class="modal-tags">
-        <span class="modal-tag">Heat transfer</span><span class="modal-tag">Thermodynamics</span><span class="modal-tag">Experimental design</span><span class="modal-tag">Nusselt correlations</span><span class="modal-tag">LMTD analysis</span><span class="modal-tag">Data processing</span>
-      </div>
-      <p class="pdf-label">Full journal paper</p>
-      <iframe class="pdf-viewer" src="fyp.pdf"></iframe>
-    </div>
-  </div>
-</div>
-
-<!-- MODAL: Supersonic -->
-<div class="modal-overlay" id="modal-supersonic" onclick="closeOnOverlay(event,'supersonic')">
-  <div class="modal">
-    <div class="modal-header">
-      <div><p class="modal-title">Supersonic transport engine design</p><p class="modal-sub">Group Project · B51EL Compressible Fluids · Heriot-Watt University</p></div>
-      <button class="modal-close" onclick="closeModal('supersonic')">✕</button>
-    </div>
-    <div class="modal-body">
-      <div class="modal-section">
-        <p class="modal-section-label">Project summary</p>
-        <p class="modal-text">With renewed commercial interest in supersonic passenger flight, this project tasked our group with designing an engine for a supersonic transport aircraft capable of operating across a range of flight conditions using both SCRAM and RAM engine configurations.</p>
-      </div>
-      <div class="modal-section">
-        <p class="modal-section-label">What we designed</p>
-        <ul class="modal-bullets">
-          <li>Engine inlet — designed for efficient air capture and compression across supersonic flight conditions</li>
-          <li>Diffuser — theoretical compression staging and stagnation condition calculations</li>
-          <li>Combustion chamber — designed to sustain combustion at supersonic flow conditions</li>
-          <li>Converging-diverging nozzle — designed to expand exhaust efficiently for thrust</li>
-          <li>Experimental validation using a wind tunnel test rig measuring Mach number, pressure and mass flow rate</li>
-          <li>Pathway analysis for adapting the design to sustainable aviation fuels</li>
-        </ul>
-      </div>
-      <div class="modal-section">
-        <p class="modal-section-label">What this project involved</p>
-        <p class="modal-text">A complex group project drawing on compressible flow theory, thermodynamics and propulsion engineering. Experimental rig issues limited full validation — which taught us as much about real engineering problem-solving as the design work itself.</p>
-      </div>
-      <div class="modal-tags">
-        <span class="modal-tag">Compressible flow</span><span class="modal-tag">SCRAM/RAM engines</span><span class="modal-tag">Nozzle design</span><span class="modal-tag">Mach number</span><span class="modal-tag">Experimental validation</span><span class="modal-tag">Sustainable aviation</span>
-      </div>
-      <p class="pdf-label">Full group report</p>
-      <iframe class="pdf-viewer" src="compressible.pdf"></iframe>
-    </div>
-  </div>
-</div>
-
-<!-- MODAL: NHS -->
-<div class="modal-overlay" id="modal-nhs" onclick="closeOnOverlay(event,'nhs')">
-  <div class="modal">
-    <div class="modal-header">
-      <div><p class="modal-title">NHS anti-ligature paper towel dispenser</p><p class="modal-sub">Group Project · B50DM Industrial Design &amp; Manufacture · Heriot-Watt University</p></div>
-      <button class="modal-close" onclick="closeModal('nhs')">✕</button>
-    </div>
-    <div class="modal-body">
-      <div class="modal-section">
-        <p class="modal-section-label">Project summary</p>
-        <p class="modal-text">NHS Scotland and InnoScot Health identified a gap in the market for a truly anti-ligature paper towel dispenser suitable for medium-secure mental health environments. No existing product fully met the required safety standards. Our group of five was commissioned to design one from scratch.</p>
-      </div>
-      <div class="modal-section">
-        <p class="modal-section-label">What we delivered</p>
-        <ul class="modal-bullets">
-          <li>Wall-mounted dispenser: PETG shell, aluminium frame, SBR seal, internal towel basket with tamper-resistant cam locks</li>
-          <li>Concept evaluation using AHP-weighted pairwise comparison across 5 initial concepts against 16 design requirements</li>
-          <li>FEA stress analysis in Abaqus — confirmed elastic response under a 1,000 N misuse load with adequate factor of safety</li>
-          <li>Full manufacturing process design, DFMA analysis and cost analysis — estimated unit cost £311.68 (50–60% reduction vs comparable market products)</li>
-          <li>Complete PFMEA, quality management plan and risk register</li>
-          <li>12 of 16 design requirements fully satisfied</li>
-        </ul>
-      </div>
-      <div class="modal-section">
-        <p class="modal-section-label">What this project involved</p>
-        <p class="modal-text">The most complete end-to-end design project I've worked on — a real client brief, real constraints, and a deliverable that could genuinely go into clinical deployment. Balancing safety, manufacturability, cost and clinical usability simultaneously, for a real NHS client, sharpened the work in a way that academic briefs alone don't.</p>
-      </div>
-      <div class="modal-tags">
-        <span class="modal-tag">FEA / Abaqus</span><span class="modal-tag">Manufacturing design</span><span class="modal-tag">DFMA</span><span class="modal-tag">PFMEA</span><span class="modal-tag">Cost analysis</span><span class="modal-tag">AHP selection</span><span class="modal-tag">NHS Scotland</span>
-      </div>
-      <p class="pdf-label">Full technical report</p>
-      <iframe class="pdf-viewer" src="nhs.pdf"></iframe>
-    </div>
-  </div>
-</div>
-
-<!-- MODAL: Formula Student -->
-<div class="modal-overlay" id="modal-formula" onclick="closeOnOverlay(event,'formula')">
-  <div class="modal">
-    <div class="modal-header">
-      <div><p class="modal-title">Formula Student driveline</p><p class="modal-sub">Heriot-Watt Racing · 2 years · Silverstone competition</p></div>
-      <button class="modal-close" onclick="closeModal('formula')">✕</button>
-    </div>
-    <div class="modal-body">
-      <div class="modal-section">
-        <p class="modal-section-label">Overview</p>
-        <p class="modal-text">Formula Student is an international engineering design competition where student teams design, build and race a single-seat formula-style car. I spent two years as a member of the driveline team at Heriot-Watt, working on the complete motor-to-wheel power transmission system.</p>
-      </div>
-      <div class="modal-section">
-        <p class="modal-section-label">What I worked on</p>
-        <ul class="modal-bullets">
-          <li>Motor-to-wheel driveline design — packaging, component selection and integration within the overall car architecture</li>
-          <li>Component tolerancing and fit analysis to ensure reliable power transmission under race loads</li>
-          <li>CAD modelling of driveline components and assemblies</li>
-          <li>Hands-on manufacturing and assembly alongside the design work</li>
-          <li>Competed at Silverstone as part of the full team — design through to track</li>
-        </ul>
-      </div>
-      <div class="modal-section">
-        <p class="modal-section-label">What this gave me</p>
-        <p class="modal-text">Formula Student is where a lot of real learning happens. Designing something that actually has to work — under time pressure, with a team, to a budget, then watching it run on track — is a different kind of engineering education. It built my CAD skills, my understanding of mechanical tolerancing, and my ability to collaborate on a complex multi-team project.</p>
-      </div>
-      <div class="modal-tags">
-        <span class="modal-tag">CAD</span><span class="modal-tag">Driveline design</span><span class="modal-tag">Tolerancing</span><span class="modal-tag">Manufacturing</span><span class="modal-tag">Team engineering</span><span class="modal-tag">Silverstone</span>
-      </div>
-    </div>
-  </div>
-</div>
-
-<script>
-  function openModal(id) {
-    document.getElementById('modal-' + id).classList.add('open');
-    document.body.style.overflow = 'hidden';
-  }
-  function closeModal(id) {
-    document.getElementById('modal-' + id).classList.remove('open');
-    document.body.style.overflow = '';
-  }
-  function closeOnOverlay(e, id) {
-    if (e.target === document.getElementById('modal-' + id)) closeModal(id);
-  }
-  document.addEventListener('keydown', function(e) {
-    if (e.key === 'Escape') {
-      document.querySelectorAll('.modal-overlay.open').forEach(function(m) {
-        m.classList.remove('open');
-        document.body.style.overflow = '';
-      });
-    }
-  });
-</script>
 </body>
 </html>
