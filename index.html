@@ -11,8 +11,8 @@
   body { font-family: 'DM Sans', sans-serif; background: #f7f6f2; color: #1a1a18; min-height: 100vh; padding: 3rem 1.5rem; }
   .wrap { max-width: 720px; margin: 0 auto; background: #fff; border: 0.5px solid #dddbd4; border-radius: 16px; overflow: hidden; }
   .hero { padding: 2.5rem 2.5rem 2rem; border-bottom: 0.5px solid #dddbd4; }
-  .hero-label { font-family: 'DM Mono', monospace; font-size: 11px; letter-spacing: 1.5px; text-transform: uppercase; color: #888780; margin-bottom: 8px; }
-  .hero-name { font-size: 38px; font-weight: 300; letter-spacing: -1px; line-height: 1.1; margin-bottom: 20px; }
+  .hero-label { font-family: 'DM Mono', monospace; font-size: 13px; letter-spacing: 0.5px; text-transform: none; color: #444441; margin-bottom: 6px; font-weight: 400; }
+  .hero-name { font-size: 28px; font-weight: 400; letter-spacing: -0.5px; line-height: 1.1; margin-bottom: 16px; }
   .hero-tags { display: flex; flex-wrap: wrap; gap: 8px; }
   .hero-tag { font-size: 12px; padding: 4px 12px; border: 0.5px solid #c8c6be; border-radius: 20px; color: #5f5e5a; }
   section { padding: 2rem 2.5rem; border-bottom: 0.5px solid #dddbd4; }
@@ -80,10 +80,10 @@
 <body>
 <div class="wrap">
   <div class="hero">
-    <p class="hero-label">MEng Mechanical &amp; Energy Engineering · Heriot-Watt University</p>
+    <p class="hero-label">Final Year · MEng (Hons) Mechanical and Energy Engineering · Heriot-Watt University</p>
     <h1 class="hero-name">Mackenzie Fettes</h1>
     <div class="hero-tags">
-      <span class="hero-tag">Graduating 2027</span>
+      <span class="hero-tag">Aberdeen, Scotland</span>
       <span class="hero-tag">Offshore &amp; Subsea Experience</span>
       <span class="hero-tag">BOSIET · MIST · OEUK Certified</span>
       <span class="hero-tag">Available Summer 2026</span>
@@ -121,7 +121,7 @@
       </div>
       <div class="card" onclick="openModal('supersonic')">
         <div class="card-icon"><svg viewBox="0 0 24 24" width="20" height="20" stroke="currentColor" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 2L11 13"/><path d="M22 2L15 22 11 13 2 9l20-7z"/></svg></div>
-        <p class="card-title">Supersonic engine design</p>
+        <p class="card-title">Supersonic jet engine design</p>
         <p class="card-desc">Group design of a SCRAM/RAM engine for a supersonic transport aircraft — inlet, diffuser, combustion chamber and CD nozzle.</p>
         <p class="card-result">Compressible flow · Propulsion</p>
         <p class="card-hint">↗ Click to read + view report</p>
@@ -287,7 +287,7 @@
 <div class="modal-overlay" id="modal-supersonic" onclick="closeOnOverlay(event,'supersonic')">
   <div class="modal">
     <div class="modal-header">
-      <div><p class="modal-title">Supersonic transport engine design</p><p class="modal-sub">Group Project · B51EL Compressible Fluids · Heriot-Watt University</p></div>
+      <div><p class="modal-title">Supersonic jet engine design</p><p class="modal-sub">Group Project · B51EL Compressible Fluids · Heriot-Watt University</p></div>
       <button class="modal-close" onclick="closeModal('supersonic')">✕</button>
     </div>
     <div class="modal-body">
