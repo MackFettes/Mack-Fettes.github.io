@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mackenzie Fettes – MEng Mechanical & Energy Engineering</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { font-size: 16px; }
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: #f7f6f2;
+    color: #1a1a18;
+    min-height: 100vh;
+    padding: 3rem 1.5rem;
+  }
+  .wrap {
+    max-width: 720px;
+    margin: 0 auto;
+    background: #fff;
+    border: 0.5px solid #dddbd4;
+    border-radius: 16px;
+    overflow: hidden;
+  }
+  .hero {
+    padding: 2.5rem 2.5rem 2rem;
+    border-bottom: 0.5px solid #dddbd4;
+  }
+  .hero-label {
+    font-family: 'DM Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: #888780;
+    margin-bottom: 8px;
+  }
+  .hero-name {
+    font-size: 38px;
+    font-weight: 300;
+    letter-spacing: -1px;
+    line-height: 1.1;
+    margin-bottom: 20px;
+  }
+  .hero-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+  .hero-tag {
+    font-size: 12px;
+    padding: 4px 12px;
+    border: 0.5px solid #c8c6be;
+    border-radius: 20px;
+    color: #5f5e5a;
+  }
+  section {
+    padding: 2rem 2.5rem;
+    border-bottom: 0.5px solid #dddbd4;
+  }
+  section:last-child { border-bottom: none; }
+  .section-label {
+    font-family: 'DM Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: #aaa99f;
+    margin-bottom: 1.25rem;
+  }
+  .about-text {
+    font-size: 15px;
+    line-height: 1.85;
+    color: #444441;
+  }
+  .job {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 4px 16px;
+    padding-bottom: 1.5rem;
+    margin-bottom: 1.5rem;
+    border-bottom: 0.5px solid #eeecea;
+  }
+  .job:last-child { padding-bottom: 0; margin-bottom: 0; border-bottom: none; }
+  .job-title { font-size: 15px; font-weight: 500; }
+  .job-co { font-size: 13px; color: #888780; margin-top: 3px; }
+  .job-date {
+    font-family: 'DM Mono', monospace;
+    font-size: 11px;
+    color: #aaa99f;
+    text-align: right;
+    white-space: nowrap;
+    padding-top: 2px;
+  }
+  .job-bullets {
+    grid-column: 1 / -1;
+    padding-left: 16px;
+    margin-top: 10px;
+  }
+  .job-bullets li {
+    font-size: 13px;
+    color: #5f5e5a;
+    line-height: 1.75;
+    margin-bottom: 4px;
+  }
+  .projects {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 12px;
+  }
+  .card {
+    background: #f7f6f2;
+    border: 0.5px solid #dddbd4;
+    border-radius: 12px;
+    padding: 1.1rem;
+    display: flex;
+    flex-direction: column;
+  }
+  .card-icon { font-size: 18px; margin-bottom: 10px; color: #888780; }
+  .card-title { font-size: 13px; font-weight: 500; margin-bottom: 6px; }
+  .card-desc { font-size: 12px; color: #5f5e5a; line-height: 1.65; flex: 1; margin-bottom: 12px; }
+  .card-result {
+    font-family: 'DM Mono', monospace;
+    font-size: 11px;
+    color: #0f6e56;
+    border-top: 0.5px solid #dddbd4;
+    padding-top: 10px;
+  }
+  .certs {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 10px;
+  }
+  .cert {
+    background: #fff;
+    border: 0.5px solid #dddbd4;
+    border-radius: 8px;
+    padding: 10px 14px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .cert-dot {
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: #1d9e75;
+    flex-shrink: 0;
+  }
+  .cert-text { font-size: 12px; font-weight: 500; line-height: 1.4; }
+  .skills { display: flex; flex-wrap: wrap; gap: 8px; }
+  .skill {
+    font-size: 12px;
+    padding: 5px 12px;
+    background: #f7f6f2;
+    border-radius: 20px;
+    color: #5f5e5a;
+    border: 0.5px solid #dddbd4;
+  }
+  .achievements { list-style: none; }
+  .achievements li {
+    font-size: 14px;
+    color: #444441;
+    line-height: 1.7;
+    padding: 6px 0;
+    border-bottom: 0.5px solid #eeecea;
+    padding-left: 16px;
+    position: relative;
+  }
+  .achievements li:last-child { border-bottom: none; }
+  .achievements li::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 14px;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: #1d9e75;
+  }
+  .contact { display: flex; gap: 10px; flex-wrap: wrap; }
+  .contact-link {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+    font-size: 13px;
+    color: #444441;
+    text-decoration: none;
+    padding: 7px 14px;
+    border: 0.5px solid #c8c6be;
+    border-radius: 8px;
+    transition: background 0.15s;
+  }
+  .contact-link:hover { background: #f7f6f2; }
+  .contact-link svg { width: 15px; height: 15px; stroke: currentColor; fill: none; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; flex-shrink: 0; }
+  @media (max-width: 600px) {
+    body { padding: 1rem; }
+    .hero, section { padding: 1.5rem; }
+    .hero-name { font-size: 28px; }
+    .projects { grid-template-columns: 1fr 1fr; }
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <div class="hero">
+    <p class="hero-label">MEng Mechanical &amp; Energy Engineering · Heriot-Watt University</p>
+    <h1 class="hero-name">Mackenzie Fettes</h1>
+    <div class="hero-tags">
+      <span class="hero-tag">Graduating 2027</span>
+      <span class="hero-tag">Offshore &amp; Subsea Experience</span>
+      <span class="hero-tag">BOSIET · MIST · OEUK Certified</span>
+      <span class="hero-tag">Available Summer 2026</span>
+    </div>
+  </div>
+
+  <section>
+    <p class="section-label">About</p>
+    <p class="about-text">Penultimate-year MEng student with real offshore industry experience — not just textbooks. I've worked hands-on with hydraulic workover units at WellGear and supported subsea pipeline design at TechnipFMC. Strong grounding in mechanical, thermodynamic and fluid systems, with current offshore safety certifications. Practical, driven under pressure, and looking for summer 2026 work where I can contribute from day one.</p>
+  </section>
+
+  <section>
+    <p class="section-label">Experience</p>
+
+    <div class="job">
+      <div>
+        <p class="job-title">Undergraduate Technician</p>
+        <p class="job-co">The WellGear Group</p>
+      </div>
+      <p class="job-date">2021 – 2025</p>
+      <ul class="job-bullets">
+        <li>Maintenance on hydraulic workover (HWO) units and offshore equipment preparation for shipment</li>
+        <li>Pump iron maintenance and pressure testing to operational and safety standards</li>
+        <li>Built deep understanding of mechanical systems, equipment reliability and offshore operations</li>
+        <li>Earned increased responsibility through consistent performance in high-pressure environments</li>
+      </ul>
+    </div>
+
+    <div class="job">
+      <div>
+        <p class="job-title">Rigid Pipeline Summer Intern</p>
+        <p class="job-co">TechnipFMC</p>
+      </div>
+      <p class="job-date">Jul – Aug 2024</p>
+      <ul class="job-bullets">
+        <li>Supported engineering teams on subsea pipeline design reviews and operational analysis</li>
+        <li>Contributed to team tasks requiring communication, project planning and collaborative problem resolution</li>
+        <li>Gained exposure to subsea systems and industry-standard engineering tools</li>
+      </ul>
+    </div>
+  </section>
+
+  <section>
+    <p class="section-label">Key projects</p>
+    <div class="projects">
+      <div class="card">
+        <div class="card-icon">
+          <svg viewBox="0 0 24 24" width="20" height="20" stroke="currentColor" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a7 7 0 0 1 7 7c0 4-3 6-5 9H10C8 15 5 13 5 9a7 7 0 0 1 7-7z"/><path d="M10 20h4"/><path d="M10 23h4"/></svg>
+        </div>
+        <p class="card-title">Heat exchanger FYP</p>
+        <p class="card-desc">Effects of coil pitch and flow configuration on heat transfer in a helically coiled heat exchanger. Final year individual research project.</p>
+        <p class="card-result">Thermodynamics · CFD · Analysis</p>
+      </div>
+      <div class="card">
+        <div class="card-icon">
+          <svg viewBox="0 0 24 24" width="20" height="20" stroke="currentColor" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="5" cy="17" r="2"/><circle cx="19" cy="17" r="2"/><path d="M5 17H3v-6l2-5h11l4 5v6h-2"/><path d="M9 17h6"/></svg>
+        </div>
+        <p class="card-title">Formula Student driveline</p>
+        <p class="card-desc">Two-year driveline team member on complete motor-to-wheel design. Component tolerancing, integration and Silverstone competition attendance.</p>
+        <p class="card-result">CAD · Design · Manufacture</p>
+      </div>
+      <div class="card">
+        <div class="card-icon">
+          <svg viewBox="0 0 24 24" width="20" height="20" stroke="currentColor" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9,22 9,12 15,12 15,22"/></svg>
+        </div>
+        <p class="card-title">NHS anti-ligature dispenser</p>
+        <p class="card-desc">Commissioned by NHS Scotland &amp; InnoScot Health. Group design of a wall-mounted paper towel dispenser for secure mental health environments.</p>
+        <p class="card-result">FEA · Manufacturing cost analysis</p>
+      </div>
+      <div class="card">
+        <div class="card-icon">
+          <svg viewBox="0 0 24 24" width="20" height="20" stroke="currentColor" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+        </div>
+        <p class="card-title">Fluid dynamics</p>
+        <p class="card-desc">Top mark in year group for fluid dynamics group project, 3rd year.</p>
+        <p class="card-result">89% · Top of year group</p>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <p class="section-label">Certifications</p>
+    <div class="certs">
+      <div class="cert"><div class="cert-dot"></div><span class="cert-text">OPITO BOSIET</span></div>
+      <div class="cert"><div class="cert-dot"></div><span class="cert-text">OPITO MIST</span></div>
+      <div class="cert"><div class="cert-dot"></div><span class="cert-text">OEUK Medical</span></div>
+      <div class="cert"><div class="cert-dot"></div><span class="cert-text">B1 Forklift (WellGear)</span></div>
+    </div>
+  </section>
+
+  <section>
+    <p class="section-label">Technical skills</p>
+    <div class="skills">
+      <span class="skill">CAD</span>
+      <span class="skill">MATLAB</span>
+      <span class="skill">Abaqus FEA</span>
+      <span class="skill">Mechanical system design</span>
+      <span class="skill">Thermodynamics</span>
+      <span class="skill">Fluid dynamics</span>
+      <span class="skill">Offshore equipment</span>
+      <span class="skill">Pressure testing</span>
+      <span class="skill">Technical report writing</span>
+    </div>
+  </section>
+
+  <section>
+    <p class="section-label">Achievements</p>
+    <ul class="achievements">
+      <li>Captained Heriot-Watt Rugby 3rd XV — led team to the club's first cup final win in recent history (2025), and reached consecutive cup final (2026)</li>
+      <li>Top mark in year group for Fluid Dynamics group project — 89%, 3rd year</li>
+      <li>Recognised for consistent contribution to The WellGear Group's operational success</li>
+    </ul>
+  </section>
+
+  <section>
+    <p class="section-label">Contact</p>
+    <div class="contact">
+      <a class="contact-link" href="mailto:Mackenzie.Fettes@Outlook.com">
+        <svg viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2"/><polyline points="2,4 12,13 22,4"/></svg>
+        Mackenzie.Fettes@Outlook.com
+      </a>
+      <a class="contact-link" href="https://www.linkedin.com/in/m-fettes">
+        <svg viewBox="0 0 24 24"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+        linkedin.com/in/m-fettes
+      </a>
+      <a class="contact-link" href="tel:07375046660">
+        <svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.65 3.35 2 2 0 0 1 3.62 1h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L7.91 8.6a16 16 0 0 0 6 6l.96-.96a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+        07375 046 660
+      </a>
+    </div>
+  </section>
+
+</div>
+</body>
+</html>
